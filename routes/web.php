@@ -14,11 +14,12 @@ Route::get("/", [HomeController::class,"index"]);
 // Route::get('/admins/home', [AdminController::class,'admins']);
 // Route::get('/user/home', [UserController::class,'user']);
 
-Route::get('/home', [HomeController::class,'redirect']);
+Route::get('/home', [HomeController::class,'redirect'
+])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get("/add_doctor_view", [AdminController::class,"addview"]);
 Route::post("/upload_doctor", [AdminController::class,"upload"]);
