@@ -40,15 +40,16 @@
                 <table>
 
                     <tr style="background-color: black">
-                        <th style="padding: 20px">Customer Name</th>
-                        <th style="padding: 20px">Email</th>
-                        <th style="padding: 20px">Date</th>
-                        <th style="padding: 20px">Doctor Name</th>
-                        <th style="padding: 20px">Phone</th>
-                        <th style="padding: 20px">Message</th>
-                        <th style="padding: 20px">Status</th>
-                        <th style="padding: 20px">Approved</th>
-                        <th style="padding: 20px">Canceled</th>
+                        <th style="padding: 10px">Customer Name</th>
+                        <th style="padding: 10px">Email</th>
+                        <th style="padding: 10px">Date</th>
+                        <th style="padding: 10px">Doctor Name</th>
+                        <th style="padding: 10px">Phone</th>
+                        <th style="padding: 10px">Message</th>
+                        <th style="padding: 10px">Status</th>
+                        <th style="padding: 10px">Approved</th>
+                        <th style="padding: 10px">Canceled</th>
+                        <th style="padding: 10px">Send Mail</th>
                     </tr>
 
                     @foreach($appData as $appoints)
@@ -63,6 +64,7 @@
                         <td>{{$appoints->status}}</td>
                         <td><a class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a></td>
                         <td><a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a></td>
+                        <td><a class="btn btn-primary" href="{{url('email_view',$appoints->id)}}">Send Mail</a></td>
                     </tr>
 
                     @endforeach
