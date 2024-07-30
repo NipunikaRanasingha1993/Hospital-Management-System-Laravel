@@ -46,7 +46,18 @@
 
             <div class="container" align="center" style="padding: 100px">
 
-                <form action="">
+                @if(session()->has('message'))
+                  <div class="alert alert-success">
+                     
+                    {{session()->get('message')}}
+                    <button type="button" class="close" data-bs-dismiss="alert">x</button>
+                  </div>
+                @endif
+
+                <form action="{{url('edit_doctor' , $data->id)}}" method="POST" 
+                    enctype="multipart/form-data">
+
+                    @csrf
 
                     <div style="padding: 20px">
                         <label for="">Doctor Name</label>
