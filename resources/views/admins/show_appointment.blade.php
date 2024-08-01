@@ -64,8 +64,21 @@
                         <td>{{$appoints->status}}</td>
                         <td><a class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a></td>
                         <td><a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a></td>
-                        <td><a class="btn btn-primary" href="{{url('email_view',$appoints->id)}}">Send Mail</a></td>
-                    </tr>
+                        <td>
+
+                          <form action="{{url('email_view',$appoints->id)}}" method="POST">
+                            @csrf
+                            <button class="submit">Mail</button>
+                          </form>
+
+                        </td>
+
+                        <form action="{{url('email_view',$appoints->id)}}" method="POST">
+                          @csrf
+                          <button class="submit">Mail</button>
+                        </form>
+                        {{-- <td><a class="btn btn-primary" href="{{url('email_view',$appoints->id)}}">Send Mail</a></td> --}}
+                      </tr>
 
                     @endforeach
 

@@ -47,7 +47,7 @@ class AdminController extends Controller
         $data=appointment::find($id);
         $data->status='approved';
         $data->save();
-
+        
         return redirect()->back();
     }
 
@@ -57,6 +57,7 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back();
+
     }
 
     public function show_doctor(){
@@ -67,6 +68,7 @@ class AdminController extends Controller
     public function delete_doctor($id){
         $oneDoctor=doctor::find($id);
         $oneDoctor->delete();
+    
 
         return redirect()->back();
     }
@@ -98,23 +100,19 @@ class AdminController extends Controller
 
     }
 
-    public function email_view($id){
+    public function email_view(Request $request , $id){
 
         $data=appointment::find($id);
-        return view('admins.email_view', compact('data'));
-    }
 
-    public function email_send(Request $request , $id){
-
-        $data=appointment::find($id);
+        compact('data');
 
         $details =[
 
-            'greeting' => $request->greeting,
-            'body' => $request->body,
-            'actiontext' => $request->actiontext,
-            'actionurl' => $request->actionurl,
-            'endpart' => $request->endpart
+            'greeting' => $data->name,
+            'body' => $data->date,
+            'actiontext' => $data->doctor,
+            'actionurl' => "https://chatgpt.com/",
+            'endpart' => $data->status
 
 
         ];
@@ -123,5 +121,30 @@ class AdminController extends Controller
 
         return redirect()->back();
 
+
+
+        // return view('admins.email_view', compact('data'));
+
     }
+
+    // public function email_send(Request $request , $id){
+
+    //     $data=appointment::find($id);
+
+    //     $details =[
+
+    //         'greeting' => $request->greeting,
+    //         'body' => $request->body,
+    //         'actiontext' => $request->actiontext,
+    //         'actionurl' => $request->actionurl,
+    //         'endpart' => $request->endpart
+
+
+    //     ];
+
+    //     Notification::send($data ,new SendEmailNotification($details));
+
+    //     return redirect()->back();
+
+    // }
 }

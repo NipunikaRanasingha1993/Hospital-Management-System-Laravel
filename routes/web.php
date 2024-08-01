@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -33,8 +32,8 @@ Route::get('/show_doctor' , [AdminController::class,'show_doctor']);
 Route::get('/delete_doctor/{id}' , [AdminController::class,'delete_doctor']);
 Route::get('/update_doctor/{id}', [AdminController::class,'update_doctor']);
 Route::post('/edit_doctor/{id}' , [AdminController::class,'edit_doctor']);
-Route::get('/email_view/{id}' , [AdminController::class,'email_view']);
-Route::post('/email_send/{id}', [AdminController::class,'email_send']);
+Route::post('/email_view/{id}' , [AdminController::class,'email_view']);
+// Route::post('/email_send/{id}', [AdminController::class,'email_send']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

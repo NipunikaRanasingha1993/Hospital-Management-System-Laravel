@@ -62,29 +62,29 @@
 
                     <div style="padding: 15px">
                         <label>Greeting</label>
-                        <input type="text" name="greeting" style="color: black" required="">
+                        <input type="text" name="greeting" style="color: black" required="" value="{{$data->name}}">
                     </div>
 
                     <div style="padding: 15px">
                         <label>Body</label>
-                        <input type="text" name="body" style="color: black" required="">
+                        <input type="text" name="body" style="color: black" required="" value="{{$data->date}}">
                     </div>
 
                     
 
                     <div style="padding: 15px">
                         <label>Action Text</label>
-                        <input type="text" name="actiontext" style="color: black" required="">
+                        <input type="text" name="actiontext" style="color: black" required="" value="{{$data->doctor}}">
                     </div>
 
                     <div style="padding: 15px">
                         <label>Action Url</label>
-                        <input type="text" name="actionurl" style="color: black" required="">
+                        <input type="text" name="actionurl" style="color: black" required="" value="{{$data->message}}">
                     </div>
 
                     <div style="padding: 15px">
                         <label>End Part</label>
-                        <input type="text" name="endpart" style="color: black" required="">
+                        <input type="text" name="endpart" style="color: black" required="" value="{{$data->status}}">
                     </div>
 
 
