@@ -108,11 +108,11 @@ class AdminController extends Controller
 
         $details =[
 
-            'greeting' => $data->name,
-            'body' => $data->date,
-            'actiontext' => $data->doctor,
+            'greeting' => "Mr/Mrs ". $data->name,
+            'body' => "You have requested to see the Dr." . $data->doctor ." on ". $data->date." . ",
+            'actiontext' => "click",
             'actionurl' => "https://chatgpt.com/",
-            'endpart' => $data->status
+            'endpart' => "We have ". $data->status." your request."
 
 
         ];

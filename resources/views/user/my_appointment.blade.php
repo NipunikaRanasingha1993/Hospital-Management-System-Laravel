@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 
   <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 
@@ -113,6 +115,14 @@
     </nav>
   </header>
 
+  <div align="center">
+
+    <img src="/myImages/Admin Img 2.png" class="img-fluid" alt="...">
+
+  </div>
+
+  
+
   <div align="center" style="padding: 70px">
 
     <table>
@@ -122,7 +132,7 @@
             <th style="padding: 10px; font-size:20px; color:white">Date</th>
             <th style="padding: 10px; font-size:20px; color:white">Message</th>
             <th style="padding: 10px; font-size:20px; color:white">Status</th>
-            <th style="padding: 10px; font-size:20px; color:white">Cancel Appointment</th>
+            {{-- <th style="padding: 10px; font-size:20px; color:white">Cancel Appointment</th> --}}
         </tr>
 
         @foreach($appoint as $appoints)
@@ -131,9 +141,18 @@
             <td style="padding: 20px; color:white">{{$appoints->doctor}}</td>
             <td style="padding: 20px; color:white">{{$appoints->date}}</td>
             <td style="padding: 20px; color:white">{{$appoints->message}}</td>
-            <td style="padding: 20px; color:white">{{$appoints->status}}</td>
-            <td><a class="btn btn-danger" onclick="return confirm('Are you sure delete this appointment?')" 
-                href="{{url('cancel_appoint' , $appoints->id)}}">Cancel</a></td>
+            <td style="padding: 20px; color:white">
+              <div>
+                <h4>{{$appoints->status}}</h4>
+              </div>
+
+              <div>
+                <a class="btn btn-danger" onclick="return confirm('Are you sure delete this appointment?')" 
+                href="{{url('cancel_appoint' , $appoints->id)}}">Cancel</a>
+
+              </div>
+            </td>
+            
         </tr>
 
         @endforeach
@@ -152,6 +171,8 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
 </body>
 </html>

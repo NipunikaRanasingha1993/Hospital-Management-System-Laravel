@@ -68,16 +68,10 @@
 
                           <form action="{{url('email_view',$appoints->id)}}" method="POST">
                             @csrf
-                            <button class="submit">Mail</button>
+                            <button class="btn btn-primary">Mail</button>
                           </form>
 
                         </td>
-
-                        <form action="{{url('email_view',$appoints->id)}}" method="POST">
-                          @csrf
-                          <button class="submit">Mail</button>
-                        </form>
-                        {{-- <td><a class="btn btn-primary" href="{{url('email_view',$appoints->id)}}">Send Mail</a></td> --}}
                       </tr>
 
                     @endforeach
