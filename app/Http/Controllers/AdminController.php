@@ -121,30 +121,9 @@ class AdminController extends Controller
 
         return redirect()->back();
 
-
-
-        // return view('admins.email_view', compact('data'));
-
     }
 
-    // public function email_send(Request $request , $id){
-
-    //     $data=appointment::find($id);
-
-    //     $details =[
-
-    //         'greeting' => $request->greeting,
-    //         'body' => $request->body,
-    //         'actiontext' => $request->actiontext,
-    //         'actionurl' => $request->actionurl,
-    //         'endpart' => $request->endpart
-
-
-    //     ];
-
-    //     Notification::send($data ,new SendEmailNotification($details));
-
-    //     return redirect()->back();
-
-    // }
+    public function text_doctor(){
+        return view("admins.text_doctor");
+    }
 }

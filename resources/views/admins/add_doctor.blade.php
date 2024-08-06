@@ -15,6 +15,7 @@
 
 
     @include('admins.css')
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container-scroller">
@@ -44,6 +45,13 @@
 
         <div style="padding-top:100px">
 
+          @if(session()->has('message'))
+              <div class="alert alert-success"> 
+                {{session()->get('message')}}
+                <button type="button" class="close" data-bs-dismiss="alert">x</button>
+              </div>
+              @endif
+
           {{-- class="container-fluid page-body-wrapper" --}}
 
           <h1 align="center">Add Doctors</h1>
@@ -52,16 +60,6 @@
           <div class="container-fluid page-body-wrapper" style="padding-top: 70px">
 
             <div>
-
-            
-
-            
-            @if(session()->has('message'))
-          <div class="alert alert-success"> 
-            {{session()->get('message')}}
-            <button type="button" class="close" data-bs-dismiss="alert">x</button>
-          </div>
-          @endif
 
           <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
 

@@ -33,6 +33,7 @@ Route::get('/delete_doctor/{id}' , [AdminController::class,'delete_doctor']);
 Route::get('/update_doctor/{id}', [AdminController::class,'update_doctor']);
 Route::post('/edit_doctor/{id}' , [AdminController::class,'edit_doctor']);
 Route::post('/email_view/{id}' , [AdminController::class,'email_view']);
+Route::get('/text_doctor' , [AdminController::class,'text_doctor']);
 // Route::post('/email_send/{id}', [AdminController::class,'email_send']);
 
 Route::middleware('auth')->group(function () {

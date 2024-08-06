@@ -35,21 +35,21 @@
 
         <div class="container-fluid page-body-wrapper">
 
-            <div align="center" style="padding-top:100px">
+            <div align="center" style="padding:10px">
 
                 <table>
 
                     <tr style="background-color: black">
-                        <th style="padding: 10px">Customer Name</th>
-                        <th style="padding: 10px">Email</th>
+                        <th style="padding: 10px">Cus.Name</th>
+                        <th style="padding: 10px">E-mail</th>
                         <th style="padding: 10px">Date</th>
-                        <th style="padding: 10px">Doctor Name</th>
-                        <th style="padding: 10px">Phone</th>
+                        <th style="padding: 10px">Doc.Name</th>
+                        <th style="padding: 10px">Tel.No</th>
                         <th style="padding: 10px">Message</th>
                         <th style="padding: 10px">Status</th>
-                        <th style="padding: 10px">Approved</th>
-                        <th style="padding: 10px">Canceled</th>
-                        <th style="padding: 10px">Send Mail</th>
+                        <th style="padding: 10px">Response</th>
+                        <th style="padding: 10px">Mail</th>
+                        {{-- <th style="padding: 10px">Send Mail</th> --}}
                     </tr>
 
                     @foreach($appData as $appoints)
@@ -62,8 +62,11 @@
                         <td>{{$appoints->phone}}</td>
                         <td>{{$appoints->message}}</td>
                         <td>{{$appoints->status}}</td>
-                        <td><a class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a></td>
-                        <td><a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a></td>
+                        <td style="padding: 10px">
+                        <a style="padding: 5px" class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a>
+                        <a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a>
+                      </td>
+
                         <td>
 
                           <form action="{{url('email_view',$appoints->id)}}" method="POST">

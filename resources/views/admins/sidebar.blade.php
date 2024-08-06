@@ -84,5 +84,14 @@
         </a>
       </li>
 
+      <li class="nav-item menu-items">
+        <a class="nav-link" href=" {{url('text_doctor')}} ">
+          <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+          </span>
+          <span class="menu-title">Test Doctor</span>
+        </a>
+      </li>
+
     </ul>
   </nav>
