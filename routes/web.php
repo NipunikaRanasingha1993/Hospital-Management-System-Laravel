@@ -34,7 +34,13 @@ Route::get('/update_doctor/{id}', [AdminController::class,'update_doctor']);
 Route::post('/edit_doctor/{id}' , [AdminController::class,'edit_doctor']);
 Route::post('/email_view/{id}' , [AdminController::class,'email_view']);
 Route::get('/text_doctor' , [AdminController::class,'text_doctor']);
-// Route::post('/email_send/{id}', [AdminController::class,'email_send']);
+
+
+Route::get('dis_doctor' , [HomeController::class,'dis_doctor']);
+Route::get('dis_about',[HomeController::class,'dis_about']);
+Route::get('dis_news',[HomeController::class,'dis_news']);
+Route::get('dis_contact',[HomeController::class,'dis_contact']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

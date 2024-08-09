@@ -13,7 +13,7 @@ body{
     place-items: center;
 }
 
-.rowbin{
+.row{
     width: 80%;
     max-width: 1170;
     display: grid;
@@ -60,7 +60,7 @@ body{
 
 .row .contentWrapper span.textWrapper span{
     display: inline-block;
-    background: rgb(27, 25, 25);
+    background: rgb(105, 101, 101);
     width: 70px;
     height: 5px;
 }
@@ -68,7 +68,7 @@ body{
 .row .contentWrapper h2{
     font-size: 40px;
     font-weight: 700;
-    color: rgb(27, 25, 25);
+    color: rgb(105, 101, 101);
     padding-bottom: 20px;
 }
 
@@ -82,7 +82,7 @@ body{
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    background: rgb(27, 25, 25);
+    background: rgb(105, 101, 101);
     color: white;
     padding: 15px 40px;
     letter-spacing: 1px;

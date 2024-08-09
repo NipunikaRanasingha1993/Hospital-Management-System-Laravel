@@ -84,5 +84,26 @@ class HomeController extends Controller
 
     }
 
+    public function dis_doctor(){
+
+        $doctor=doctor::all();
+        return view('user.display.disDoctor',compact('doctor'));
+    }
+
+    public function dis_about(){
+
+        $doctor=doctor::all();
+        return view('user.display.dis_about',compact('doctor'));
+    }
+
+    public function dis_news(){
+        return view('user.display.dis_news');
+    }
+
+    public function dis_contact(){
+        $doctor=doctor::all();
+        return view('user.display.dis_contact',compact('doctor'));
+    }
+
         
 }

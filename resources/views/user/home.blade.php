@@ -72,19 +72,19 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="html/index.html">Home</a>
+              <a class="nav-link" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/about.html">About Us</a>
+              <a class="nav-link" href="{{url('dis_about')}}">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/doctors.html">Doctors</a>
+              <a class="nav-link" href="{{url('dis_doctor')}}">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/blog.html">News</a>
+              <a class="nav-link" href="{{url('dis_news')}}">News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/contact.html">Contact</a>
+              <a class="nav-link" href="{{url('dis_contact')}}">Contact</a>
             </li>
 
             @if(Route::has('login'))
