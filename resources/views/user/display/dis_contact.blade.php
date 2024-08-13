@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 
   <link rel="stylesheet" href="../assets/css/theme.css">
+
+  
+
 </head>
 <body>
 
@@ -73,13 +76,13 @@
             <li class="nav-item">
               <a class="nav-link" href="{{url('dis_about')}}">About Us</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{url('dis_doctor')}}">Doctors</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('dis_news')}}">News</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="{{url('dis_contact')}}">Contact</a>
             </li>
 
@@ -96,14 +99,14 @@
 
             </x-app-layout>
 
-
             @else
+
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">Login</a>
+              <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
             </li>
 
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">Register</a>
+              <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
             </li>
 
             @endauth
@@ -122,175 +125,46 @@
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Doctors</li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
           </ol>
         </nav>
-        <h1 class="font-weight-normal">Our Doctors</h1>
+        <h1 class="font-weight-normal">Contact</h1>
       </div> <!-- .container -->
     </div> <!-- .banner-section -->
   </div> <!-- .page-banner -->
 
-  <div class="page-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-
-          <div class="row">
-
-            @foreach($doctor as $doctors)
-            
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="/imagename/{{$doctors->image}}" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">{{$doctors->name}}</p>
-                  <span class="text-sm text-grey">{{$doctors->speciality}}</span>
-                </div>
-              </div>
-            </div>
-
-            @endforeach
-    
-            {{-- <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-                  <span class="text-sm text-grey">Dental</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                  <span class="text-sm text-grey">General Health</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_1.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Stein Albert</p>
-                  <span class="text-sm text-grey">Cardiology</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_2.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Alexa Melvin</p>
-                  <span class="text-sm text-grey">Dental</span>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
-              <div class="card-doctor">
-                <div class="header">
-                  <img src="../assets/img/doctors/doctor_3.jpg" alt="">
-                  <div class="meta">
-                    <a href="#"><span class="mai-call"></span></a>
-                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
-                  </div>
-                </div>
-                <div class="body">
-                  <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                  <span class="text-sm text-grey">General Health</span>
-                </div>
-              </div>
-            </div> --}}
-
-          </div>
-
-        </div>
-      </div>
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
-
   <div class="page-section">
     <div class="container">
-      <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
+      <h1 class="text-center wow fadeInUp">Get in Touch</h1>
+      
 
-      <form class="main-form" action="{{url('appointment')}}" method="POST">
-
-        @csrf
-
-        <div class="row mt-5 ">
-          <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
-            <input type="text" name="name" class="form-control" placeholder="Full name">
+      <form class="contact-form mt-5">
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <label for="fullName">Name</label>
+            <input type="text" id="fullName" class="form-control" placeholder="Full name..">
           </div>
-          <div class="col-12 col-sm-6 py-2 wow fadeInRight">
-            <input type="text" name="email" class="form-control" placeholder="Email address..">
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="emailAddress">Email</label>
+            <input type="text" id="emailAddress" class="form-control" placeholder="Email address..">
           </div>
-          <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
-            <input type="date" name="date" class="form-control">
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" class="form-control" placeholder="Enter subject..">
           </div>
-          <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-            <select name="doctor" id="departement" class="custom-select">
-
-              <option value="">--select--</option>
-
-              @foreach($doctor as $doctors)
-
-              <option value="{{$doctors->name}}">{{$doctors->name}}--special--{{$doctors->speciality}}</option>
-              {{-- <option value="cardiology">Cardiology</option>
-              <option value="dental">Dental</option>
-              <option value="neurology">Neurology</option>
-              <option value="orthopaedics">Orthopaedics</option> --}}
-
-              @endforeach
-            </select>
-          </div>
-          <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-            <input type="text" name="phone" class="form-control" placeholder="Number..">
-          </div>
-          <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-            <textarea type="text" name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" rows="8" placeholder="Enter Message.."></textarea>
           </div>
         </div>
-
-        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+        <button type="submit" class="btn btn-primary wow zoomIn">Send Message</button>
       </form>
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
-  
+    </div>
+  </div>
+
+  <div class="maps-container wow fadeInUp">
+    <div id="google-maps"></div>
+  </div>
 
   <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
     <div class="container py-5 py-lg-0">
@@ -369,7 +243,11 @@
 
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
+<script src="../assets/js/google-maps.js"></script>
+
 <script src="../assets/js/theme.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
   
 </body>
 </html>

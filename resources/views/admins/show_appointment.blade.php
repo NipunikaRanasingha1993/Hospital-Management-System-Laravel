@@ -33,22 +33,22 @@
       @include('admins.navbar')
         <!-- partial -->
 
-        <div class="container-fluid page-body-wrapper">
+        <div align="center" class="container-fluid page-body-wrapper">
 
-            <div align="center" style="padding:10px">
+          <div align="center" style="padding-top:100px">
 
                 <table>
 
                     <tr style="background-color: black">
-                        <th style="padding: 10px">Cus.Name</th>
-                        <th style="padding: 10px">E-mail</th>
-                        <th style="padding: 10px">Date</th>
-                        <th style="padding: 10px">Doc.Name</th>
-                        <th style="padding: 10px">Tel.No</th>
-                        <th style="padding: 10px">Message</th>
-                        <th style="padding: 10px">Status</th>
-                        <th style="padding: 10px">Response</th>
-                        <th style="padding: 10px">Mail</th>
+                        <th style="padding: 20px">Cus.Name</th>
+                        <th style="padding: 20px">E-mail</th>
+                        <th style="padding: 20px">Date</th>
+                        <th style="padding: 20px">Doc.Name</th>
+                        <th style="padding: 20px">Tel.No</th>
+                        {{-- <th style="padding: 20px">Message</th> --}}
+                        <th style="padding: 20px">Status</th>
+                        <th style="padding: 20px">Response</th>
+                        <th style="padding: 20px">Mail</th>
                         {{-- <th style="padding: 10px">Send Mail</th> --}}
                     </tr>
 
@@ -60,9 +60,9 @@
                         <td>{{$appoints->date}}</td>
                         <td>{{$appoints->doctor}}</td>
                         <td>{{$appoints->phone}}</td>
-                        <td>{{$appoints->message}}</td>
+                        {{-- <td>{{$appoints->message}}</td> --}}
                         <td>{{$appoints->status}}</td>
-                        <td style="padding: 10px">
+                        <td>
                         <a style="padding: 5px" class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a>
                         <a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a>
                       </td>
@@ -71,7 +71,7 @@
 
                           <form action="{{url('email_view',$appoints->id)}}" method="POST">
                             @csrf
-                            <button class="btn btn-primary">Mail</button>
+                            <button style="margin: 0 10px 0 0" class="btn btn-primary">Mail</button>
                           </form>
 
                         </td>
@@ -81,9 +81,7 @@
 
 
                 </table>
-
-
-            </div>
+              </div>
             
 
         </div>

@@ -2,7 +2,8 @@
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
-      <div style="gap: 15px" class="row align-items-center">
+      <div style="display:flex" class="row align-items-center">
+        
       <div>
         <img style="width: 30%" src="myImages/male doc.png" alt="">
       </div>
