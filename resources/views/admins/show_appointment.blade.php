@@ -33,61 +33,79 @@
       @include('admins.navbar')
         <!-- partial -->
 
-        <div align="center" class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row">
+                
+                <div class="row ">
+                <div class="col-12 grid-margin">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Appointment Status</h4>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              
+                              <th style="color:rgb(158, 13, 85)"> Client Name </th>
+                              <th style="color:rgb(158, 13, 85)"> E-mail </th>
+                              <th style="color:rgb(158, 13, 85)"> Date </th>
+                              <th style="color:rgb(158, 13, 85)"> Doctor Name </th>
+                              <th style="color:rgb(158, 13, 85)"> Telephone No </th>
+                              <th style="color:rgb(158, 13, 85)"> Message </th>
+                              <th style="color:rgb(158, 13, 85)"> Status </th>
+                              <th style="color:rgb(158, 13, 85)"> Response </th>
+                              <th style="color:rgb(158, 13, 85)"> Send Mail </th>
+                            </tr>
+                          </thead>
 
-          <div align="center" style="padding-top:100px">
+                          @foreach($appoint as $app)
+                          <tbody>
+                            <tr>
+                              
+                              <td>
+                                <span class="ps-2">{{$app->name}}</span>
+                              </td>
+                              <td>{{$app->email}} </td>
+                              <td> {{$app->date}} </td>
+                              <td> {{$app->doctor}} </td>
+                              <td> {{$app->phone}} </td>
+                              <td> {{$app->message}} </td>
+                              <td> {{$app->status}} </td>
+                              <td>
+                                <div>
+                                    <a style="padding: 5px" class="btn btn-outline-success" href="{{url('approved', $app->id)}}">Approve</a>
+                                    <a class="btn btn-outline-danger" href="{{url('canceled',$app->id)}}">Cancel</a>
+                                </div>
+                              </td>
 
-                <table>
+                              <td>
 
-                    <tr style="background-color: black">
-                        <th style="padding: 20px">Cus.Name</th>
-                        <th style="padding: 20px">E-mail</th>
-                        <th style="padding: 20px">Date</th>
-                        <th style="padding: 20px">Doc.Name</th>
-                        <th style="padding: 20px">Tel.No</th>
-                        {{-- <th style="padding: 20px">Message</th> --}}
-                        <th style="padding: 20px">Status</th>
-                        <th style="padding: 20px">Response</th>
-                        <th style="padding: 20px">Mail</th>
-                        {{-- <th style="padding: 10px">Send Mail</th> --}}
-                    </tr>
+                                <form action="{{url('email_view',$app->id)}}" method="POST">
+                                    @csrf
+                                    <button style="margin: 0 10px 0 0" class="btn btn-outline-primary">Mail</button>
+                                  </form>
 
-                    @foreach($appData as $appoints)
+                              </td>
+                            </tr>
+                            
+                          </tbody>
 
-                    <tr align="center" style="background-color: skyblue">
-                        <td>{{$appoints->name}}</td>
-                        <td>{{$appoints->email}}</td>
-                        <td>{{$appoints->date}}</td>
-                        <td>{{$appoints->doctor}}</td>
-                        <td>{{$appoints->phone}}</td>
-                        {{-- <td>{{$appoints->message}}</td> --}}
-                        <td>{{$appoints->status}}</td>
-                        <td>
-                        <a style="padding: 5px" class="btn btn-success" href="{{url('approved', $appoints->id)}}">Approve</a>
-                        <a class="btn btn-danger" href="{{url('canceled',$appoints->id)}}">Cancel</a>
-                      </td>
+                          @endforeach
 
-                        <td>
-
-                          <form action="{{url('email_view',$appoints->id)}}" method="POST">
-                            @csrf
-                            <button style="margin: 0 10px 0 0" class="btn btn-primary">Mail</button>
-                          </form>
-
-                        </td>
-                      </tr>
-
-                    @endforeach
-
-
-                </table>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            
-
+              
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
         </div>
-      
-
-
+        <!-- page-body-wrapper ends -->
+        </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     @include('admins.script')

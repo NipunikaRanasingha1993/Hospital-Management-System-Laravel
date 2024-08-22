@@ -39,8 +39,8 @@ class AdminController extends Controller
 
     public function show_appointment(){
 
-        $appData = appointment::all();
-        return view("admins.show_appointment" , compact("appData"));
+        $appoint = appointment::all();
+        return view("admins.show_appointment" , compact("appoint"));
     }
 
     public function approved($id){
@@ -123,9 +123,5 @@ class AdminController extends Controller
 
     }
 
-    public function text_responsive(){
-
-        $appoint=Appointment::all();
-        return view('admins.responsive' , compact('appoint'));
-    }
+    
 }

@@ -33,48 +33,73 @@
       @include('admins.navbar')
         <!-- partial -->
 
-        <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              
+                      
+            <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                  <h4 class="card-title">All Doctors</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+          
+                            <th style="color:rgb(158, 13, 85)"> Doctor Image </th>
+                            <th style="color:rgb(158, 13, 85)"> Doctor Name </th>
+                            <th style="color:rgb(158, 13, 85)"> Phone No </th>
+                            <th style="color:rgb(158, 13, 85)"> Speciality </th>
+                            <th style="color:rgb(158, 13, 85)"> Room No </th>
+                            <th style="color:rgb(158, 13, 85)"> Delete </th>
+                            <th style="color:rgb(158, 13, 85)"> Update </th>
+                            
+                          </tr>
+                        </thead>
 
+                        @foreach($docData as $doctor)
 
-            <div align="center" style="padding-top:100px">
+                        <tbody>
+                          <tr>
+                            
+                            <td>
+                              <img height="100" width="100" src="imagename/{{$doctor->image}}" alt="" />
+                              
+                            </td>
+                            <td> {{$doctor->name}} </td>
+                            <td> {{$doctor->phone}} </td>
+                            <td> {{$doctor->speciality}} </td>
+                            <td> {{$doctor->room}} </td>
+                            <td>
 
-                <table>
+                              <a class="btn btn-outline-danger" onclick="return confirm('Are you sure delete the doctor?')" 
+                            href="{{url('delete_doctor' , $doctor->id)}}">Delete</a>
 
-                    <tr style="background-color: black">
+                            </td>
+                            <td>
+                              
+                              <a class="btn btn-outline-primary" href="{{url('update_doctor' , $doctor->id)}}">Update</a>
 
-                        <th style="padding: 20px">Doctor Name</th>
-                        <th style="padding: 20px">Phone No</th>
-                        <th style="padding: 20px">Speciality</th>
-                        <th style="padding: 20px">Room No</th>
-                        <th style="padding: 20px">Image</th>
-                        <th style="padding: 20px">Delete</th>
-                        <th style="padding: 20px">Update</th>
-                    
-                    </tr>
+                            </td>
+                          </tr>
+                          </tbody>
 
-                    @foreach($docData as $doctor)
-
-                    <tr align="center" style="background-color: skyblue">
-
-                        <td>{{$doctor->name}}</td>
-                        <td>{{$doctor->phone}}</td>
-                        <td>{{$doctor->speciality}}</td>
-                        <td>{{$doctor->room}}</td>
-                        <td><img height="100" width="100" src="imagename/{{$doctor->image}}" alt=""></td>
-                        <td><a class="btn btn-danger" onclick="return confirm('Are you sure delete the doctor?')" 
-                            href="{{url('delete_doctor' , $doctor->id)}}">Delete</a></td>
-                        <td><a class="btn btn-primary" href="{{url('update_doctor' , $doctor->id)}}">Update</a></td>
-
-                    </tr>
-
-                    @endforeach
-
-
-                </table>
-
+                          @endforeach
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
+            
+          <!-- partial -->
         </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+      </div>
       
 
 
