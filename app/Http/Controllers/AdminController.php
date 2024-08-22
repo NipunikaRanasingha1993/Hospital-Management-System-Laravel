@@ -123,7 +123,9 @@ class AdminController extends Controller
 
     }
 
-    public function text_doctor(){
-        return view("admins.text_doctor");
+    public function text_responsive(){
+
+        $appoint=Appointment::all();
+        return view('admins.responsive' , compact('appoint'));
     }
 }
