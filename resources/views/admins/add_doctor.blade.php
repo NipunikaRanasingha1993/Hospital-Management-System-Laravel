@@ -4,18 +4,8 @@
 <html lang="en">
   <head>
 
-    <style type="text/css">
-    label{
-        display: inline-block;
-        width:200px;
-       
-    }
-
-    </style>
-
-
     @include('admins.css')
-    <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body>
     <div class="container-scroller">
@@ -42,86 +32,95 @@
       <!-- partial -->
       @include('admins.navbar')
         <!-- partial -->
+      
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              
+                 
+                        
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Doctors</h4>
+                    <div class="row">
+                      <div class="col-md-7">
 
-        <div style="padding-top:100px">
+                        <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
 
-          @if(session()->has('message'))
-              <div class="alert alert-success"> 
-                {{session()->get('message')}}
-                <button type="button" class="close" data-bs-dismiss="alert">x</button>
-              </div>
-              @endif
-
-          {{-- class="container-fluid page-body-wrapper" --}}
-
-          <h1 align="center">Add Doctors</h1>
-
+                          @csrf
           
-          <div class="container-fluid page-body-wrapper" style="padding-top: 70px">
+          
+                          <div style="padding: 15px">
+                              <label>Doctor Name</label>
+                              <input type="text" name="name" style="color: black" 
+                              placeholder="write the name" required="">
+                          </div>
+          
+                          <div style="padding: 15px">
+                              <label>Phone Number</label>
+                              <input type="number" name="phone" style="color: black" 
+                              placeholder="write the number" required="">
+                          </div>
+          
+                          <div style="padding: 15px">
+                              <label>Speciality</label>
+                              <select name="speciality" style="color: black ;width:200px" required="">
+                                  <option>--Select--</option>
+                                  <option value="cardiology">Cardiology</option>
+                                  <option value="general health">General Health</option>
+                                  <option value="dental">Dental</option>
+                                  <option value="skin">Skin</option>
+                                  <option value="eye">Eye</option>
+                              </select>
+                              
+                          </div>
+          
+                          <div style="padding: 15px">
+                              <label>Room No</label>
+                              <input type="text" name="room" style="color: black" 
+                              placeholder="write the room number" required="">
+                          </div>
+          
+                          <div style="padding: 15px">
+                              <label>Doctor Image</label>
+                              <input type="file" name="file" required="">
+                          </div>
+          
+                          <div style="padding: 15px">
+                              
+                              <input type="submit" class="btn btn-success">
 
-            <div>
-
-          <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
-
-                      @csrf
-  
-  
-                      <div style="padding: 15px">
-                          <label>Doctor Name</label>
-                          <input type="text" name="name" style="color: black" 
-                          placeholder="write the name" required="">
+                          </div>
+          
+                        </form>
+          
+                        
                       </div>
-  
-                      <div style="padding: 15px">
-                          <label>Phone Number</label>
-                          <input type="number" name="phone" style="color: black" 
-                          placeholder="write the number" required="">
+                      <div class="col-md-5">
+                        <img src="../myImages/doctor wall.png" alt="">
                       </div>
-  
-                      <div style="padding: 15px">
-                          <label>Speciality</label>
-                          <select name="speciality" style="color: black ;width:200px" required="">
-                              <option>--Select--</option>
-                              <option value="cardiology">Cardiology</option>
-                              <option value="general health">General Health</option>
-                              <option value="dental">Dental</option>
-                              <option value="skin">Skin</option>
-                              <option value="eye">Eye</option>
-                          </select>
-                          
-                      </div>
-  
-                      <div style="padding: 15px">
-                          <label>Room No</label>
-                          <input type="text" name="room" style="color: black" 
-                          placeholder="write the room number" required="">
-                      </div>
-  
-                      <div style="padding: 15px">
-                          <label>Doctor Image</label>
-                          <input type="file" name="file" required="">
-                      </div>
-  
-                      <div style="padding: 15px">
-                          
-                          <input type="submit" class="btn btn-success">
-                      </div>
-
-                    </form>
-
+                    </div>
                   </div>
-
-                  <div >
-                    
-                      <img src="../myImages/Admin Img 1.png" alt="">
-                   
-                  </div>
-
+                </div>
               </div>
-
-                  
+            </div>
           </div>
-
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
 
     <!-- container-scroller -->
     <!-- plugins:js -->
